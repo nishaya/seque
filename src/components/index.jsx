@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Card } from 'antd'
+import { Card, Col, Row } from 'antd'
+import BaseFragment from 'components/seq/fragments/base'
 
 export default class IndexComponent extends Component {
   render() {
@@ -9,6 +10,14 @@ export default class IndexComponent extends Component {
         <div className="seque-header__subtitle">Pattern Sequencer</div>
       </div>
       <Card title="Main">
+        <Row>
+          <Col span="12">
+            <BaseFragment />
+          </Col>
+          <Col span="12">
+            <BaseFragment />
+          </Col>
+        </Row>
       </Card>
     </div>)
   }
