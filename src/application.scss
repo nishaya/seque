@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+
+html, body {
+  letter-spacing: 0.1em;
+  background-color: #eaf3fc;
+
+  h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: 0em;
+    font-family: 'Ropa Sans', sans-serif;
+  }
+
+  h1 {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 100px;
+    color: #c0c9d0;
+
+    .accent {
+      color: #08e;
+    }
+  }
+
+  .seque-header {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .seque-header__subtitle {
+    color: #999;
+    margin: 0px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}
