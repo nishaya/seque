@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Col, Row } from 'antd'
-import BaseFragment from 'components/seq/fragments/base'
+import Fragment from 'components/fragment'
+console.log(Fragment)
 
 export default class IndexComponent extends Component {
   render() {
@@ -12,10 +13,10 @@ export default class IndexComponent extends Component {
       <Card title="Main">
         <Row>
           <Col span="12">
-            <BaseFragment />
+            <Fragment.Step />
           </Col>
           <Col span="12">
-            <BaseFragment />
+            <Fragment.Base />
           </Col>
         </Row>
       </Card>
