@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import { Card, Col, Row } from 'antd'
 import Fragment from 'components/fragment'
-console.log(Fragment)
+import Pattern from 'models/pattern'
 
 export default class IndexComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pattern: new Pattern()
+    }
+  }
+
   render() {
     return (<div>
       <div className="seque-header">
@@ -13,10 +20,10 @@ export default class IndexComponent extends Component {
       <Card title="Main">
         <Row>
           <Col span="12">
-            <Fragment.Step />
+            <Fragment.Step pattern={this.state.pattern} />
           </Col>
           <Col span="12">
-            <Fragment.Base />
+            <Fragment.Base pattern={this.state.pattern} />
           </Col>
         </Row>
       </Card>
