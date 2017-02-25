@@ -7,8 +7,15 @@ export default class IndexComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      pattern: new Pattern()
+      patterns: new Array(3).fill(new Pattern()),
     }
+  }
+
+  modifyPattern(index, pattern) {
+    console.log('pattern modified', index, pattern)
+    const patterns = this.state.patterns.slice(0)
+    patterns[index] = pattern
+    this.setState({ patterns })
   }
 
   render() {
@@ -21,12 +28,15 @@ export default class IndexComponent extends Component {
         <Row>
           <Col span="12">
             <Fragment.Step
-              pattern={this.state.pattern}
-              onModified={pattern => console.log(pattern)}
+              pattern={this.state.patterns[0]}
+              onModified={pattern => this.modifyPattern(1, pattern)}
             />
           </Col>
           <Col span="12">
-            <Fragment.Base pattern={this.state.pattern} />
+            <Fragment.Base
+              pattern={this.state.patterns[1]}
+              onModified={pattern => this.modifyPattern(2, pattern)}
+            />
           </Col>
         </Row>
       </Card>

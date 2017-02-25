@@ -4,17 +4,17 @@ import Base from './base'
 import Pattern from 'models/pattern'
 
 export default class Step extends Base {
-  onModified() {
+  modifyPattern(props = {}) {
     const newPattern = new Pattern()
-    Object.assign(newPattern, this.props.pattern)
-    newPattern.foo = 'bar'
+    Object.assign(newPattern, {...this.props.pattern, ...props})
+    newPattern[performance.now()] = 'bar'
     this.props.onModified(newPattern)
   }
 
   render() {
     return(<Card>
       step
-      <Button onClick={() => this.onModified()}>test</Button>
+      <Button onClick={() => this.modifyPattern()}>test</Button>
     </Card>)
   }
 }
