@@ -8,6 +8,7 @@ export default class IndexComponent extends Component {
     super(props)
     this.state = {
       pattern: new Pattern()
+      patterns: new Map(),
     }
   }
 

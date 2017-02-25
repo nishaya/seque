@@ -5,6 +5,11 @@ import Pattern from 'models/pattern'
 export default class Base extends Component {
   static propTypes = {
     pattern: PropTypes.instanceOf(Pattern).isRequired,
+    onModified: PropTypes.func,
+  }
+
+  static defaultProps = {
+    onModified: () => console.log('modified'),
   }
 
   render() {
