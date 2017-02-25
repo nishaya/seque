@@ -8,7 +8,6 @@ export default class IndexComponent extends Component {
     super(props)
     this.state = {
       pattern: new Pattern()
-      patterns: new Map(),
     }
   }
 
@@ -21,7 +20,10 @@ export default class IndexComponent extends Component {
       <Card title="Main">
         <Row>
           <Col span="12">
-            <Fragment.Step pattern={this.state.pattern} />
+            <Fragment.Step
+              pattern={this.state.pattern}
+              onModified={pattern => console.log(pattern)}
+            />
           </Col>
           <Col span="12">
             <Fragment.Base pattern={this.state.pattern} />
