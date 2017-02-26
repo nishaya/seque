@@ -16,8 +16,9 @@ export default class Base extends Component {
     this.modifyPattern()
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.pattern !== nextProps.pattern) {
+  componentDidUpdate(prevProps) {
+    if (this.props.pattern !== prevProps.pattern) {
+      console.log('receive new pattern', this.props.pattern)
       this.modifyPattern()
     }
   }
@@ -26,6 +27,7 @@ export default class Base extends Component {
     const newPattern = new Pattern()
     Object.assign(newPattern, {...this.props.pattern, ...props})
     newPattern[performance.now()] = 'bar'
+    console.log('newPatetrn', newPattern)
     this.props.onModified(newPattern)
   }
 
